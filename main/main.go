@@ -11,3 +11,7 @@ func main() {
 	fmt.Printf("%f\n", fltPos)
 	fmt.Printf("%f\n", fltNeg)
 }
+
+func Add(a int, b int) int {
+	return a + b
+}
