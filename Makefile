@@ -6,7 +6,7 @@ lint: fmt
 	golint ./...
 vet: fmt
 	go vet ./...
-run: vet
+test: vet
 	go run ./main/main.go
-# build: vet
-# 	go build ./main/main.go
+ build: test
+ 	go build ./main/main.go
