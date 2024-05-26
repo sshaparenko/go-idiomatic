@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := run
+.DEFAULT_GOAL := build
 
 fmt:
 	go fmt ./...
@@ -7,6 +7,6 @@ lint: fmt
 vet: fmt
 	go vet ./...
 test: vet
-	go run ./main/main.go
- build: test
- 	go build ./main/main.go
+	gotestsum --format pkgname --junitfile report.xml -- -failfast -race -coverprofile=coverage.out ./...
+build: test
+	go build -o main/app ./main/main.go
